@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 bin/run_search.py --dry-run*)",
+      "Bash(python3 bin/skill_gaps.py*)",
+      "Bash(python3 bin/write_rating_summary.py*)",
+      "Bash(python3 bin/apply_ratings.py*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)"
+    ]
+  }
+}

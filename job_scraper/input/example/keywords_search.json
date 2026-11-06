@@ -1,0 +1,35 @@
+{
+  "searchArea": {
+    "remote": {"locationSearch": ["United States"], "languages": ["English"]},
+    "local": {
+      "name": "Greater Seattle",
+      "locationSearch": ["Washington, United States"],
+      "keywords": ["seattle", "bellevue", "redmond", "kirkland", "bothell", "everett",
+                   "tacoma", "renton", "greater seattle", "washington", ", wa"]
+    }
+  },
+  "keywordCategories": {
+    "Systems Engineering": ["Linux Kernel Engineer", "Platform Software Engineer", "Systems Software Engineer"],
+    "Security Endpoint": ["Endpoint Agent", "eBPF Engineer"]
+  },
+  "groups": [
+    {
+      "group": "High Signal",
+      "keywords": ["Linux Kernel Engineer", "eBPF Engineer"],
+      "permuteKeywords": true,
+      "limit": 100
+    },
+    {
+      "group": "Broad Titles",
+      "keywords": ["Staff Software Engineer", "Principal Software Engineer"],
+      "actorInput": {"aiExperienceLevelFilter": ["5-10", "10+"], "titleExclusionSearch": ["Frontend", "iOS", "Android"]},
+      "limit": 300
+    },
+    {
+      "group": "Acme Corp",
+      "keywords-category": ["Systems Engineering", "Security Endpoint"],
+      "companies": ["Acme"],
+      "limit": 100
+    }
+  ]
+}

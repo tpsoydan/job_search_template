@@ -1,0 +1,9 @@
+{
+  "libraryRoot": "../library",
+  "topics": {
+    "Firmware: UEFI/BIOS/BMC": ["firmware/uefi_bmc_redfish.md"],
+    "Virtualization: KVM/QEMU/VMware": ["os/linux/kvm_qemu_virtualization.md"],
+    "Kubernetes & containers": ["cloud/kubernetes_cloud_native_architecture.md"],
+    "Public cloud (AWS/GCP/Azure)": ["cloud/aws_foundation.md"]
+  }
+}

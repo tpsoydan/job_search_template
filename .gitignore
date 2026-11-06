@@ -1,0 +1,23 @@
+# Scraper results: large and regenerable
+job_scraper/output/
+
+# Scratch areas: keep the folders, not their contents
+**/ignore/*
+!**/ignore/.gitkeep
+
+# Stale copies people keep around
+**/OLD/
+**/BKP/
+
+# Personal Claude Code permissions (change with every approval)
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor and macOS clutter
+.DS_Store
+._*
+*.swp
+~$*
