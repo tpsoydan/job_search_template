@@ -9,6 +9,9 @@ job_scraper/output/
 **/OLD/
 **/BKP/
 
+# Marks the template's own folder (see CLAUDE.md, start of every session); never shared
+.template_root
+
 # Personal Claude Code permissions (change with every approval)
 .claude/settings.local.json
 

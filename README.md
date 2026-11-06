@@ -24,22 +24,25 @@ Claude Code does the work; the `CLAUDE.md` files tell it how.
 
 ## Setup
 
-1. Clone this template and make it your own private workspace. This repo becomes `upstream`, so you
-   can pull later improvements:
-   ```
-   git clone <template-url> my_job_search
-   cd my_job_search
-   git remote rename origin upstream
-   gh repo create my_job_search --private --source . --push
-   ```
-   Keep your workspace **private**: it will hold your resume and job search details. (A GitHub fork
-   of a public repo is always public, so use a clone, not a fork.)
+Template URL: `<template-url>`
+
+1. Get your own copy, either way:
+   - **Clone it:** `git clone <template-url> my_job_search`
+   - **Or** use GitHub's **Use this template** button to create a new **private** repo, then clone
+     that.
+
+   Keep your workspace **private**: it will hold your resume and job search details. Don't fork this
+   repo: a fork of a public repo is always public.
 2. Start Claude Code in the folder:
    ```
+   cd my_job_search
    claude
    ```
-   It sees there's no profile yet and walks you through setup: your background and targets, your
-   resume (put it in `input/resume/` as `resume_<yymmdd>.pdf`), your search config, and a dry run.
+   Say something like "help me set up my job search". Claude first sorts out the git remotes: this
+   template becomes `upstream`, so you can pull later improvements, and your own private repo becomes
+   `origin` (Claude offers to create it). Then it walks you through setup: your background and
+   targets, your resume (put it in `input/resume/` as `resume_<yymmdd>.pdf`), your search config, and
+   a dry run.
 
 ## Using it
 

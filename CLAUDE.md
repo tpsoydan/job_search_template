@@ -4,12 +4,36 @@ A workspace for one person's job search: find jobs, rate them against the resume
 would raise the ratings, study, and prepare for interviews. It's a copy of a generic template with the
 person's own material added on top.
 
-## Start of every session
+## Start of every session: workspace or template?
 
-1. **Read `input/profile.md`.** It says who the user is, what they're looking for, and their working
-   rules for Claude. Follow those rules as if they were written here.
-2. **If `input/profile.md` doesn't exist, this is a new workspace:** run First-Time Setup (below)
-   before anything else.
+This folder is either a **workspace** (someone's copy, holding their personal files) or the
+**template itself** (generic files only). Work out which before doing anything else:
+
+| What you find | It is | Do this |
+|---|---|---|
+| `input/profile.md` exists | an established workspace | Read `input/profile.md`: who the user is, what they're looking for, their working rules. Follow those rules as if they were written here. |
+| a `.template_root` file | the template (local copy) | Template mode (below). |
+| no `git remote` at all | the template (local, not yet on GitHub) | Template mode. |
+| an `upstream` remote, no profile | a new workspace, set up correctly | First-Time Setup (below). |
+| no `upstream` remote, no profile, but an `origin` | **unclear** | Ask (below). |
+
+**When it's unclear,** show the user `git remote -v` and ask which applies:
+- **"My new workspace; origin is the template"** (they cloned the template): run
+  `git remote rename origin upstream`, then offer to create their own private repo as the new
+  origin (`gh repo create <name> --private --source . --push`). Then First-Time Setup.
+- **"My new workspace; origin is my own repo"** (they used GitHub's "Use this template" button):
+  keep `origin`, and add the template as `upstream`: `git remote add upstream <template-url>` (the
+  URL is in README.md; ask if it's still a placeholder). Tell them the first template update needs
+  `git pull upstream main --allow-unrelated-histories`, because "Use this template" doesn't keep the
+  template's history. Then First-Time Setup.
+- **"This is the template"** (e.g. the owner's clone of it from GitHub): template mode. Suggest
+  creating an empty `.template_root` file so you don't have to ask next time (it's in `.gitignore`,
+  so it never spreads to workspaces).
+
+**Template mode:** never run First-Time Setup and never add personal files (profiles, resumes, search
+configs, results, job folders). Work only on generic files: CLAUDE.md and README files, scripts,
+`example/` folders, `new_job_skeleton/`, and merging improvements sent back from workspaces. The
+rules under "Template files vs. personal files" apply to every change.
 
 ---
 
@@ -91,8 +115,8 @@ groups, not all at once, and show each file before saving it.
 
 ## Template updates and sending improvements back
 
-The workspace is a git clone of the template; the template is the `upstream` remote and the user's
-own (private) repo is `origin`, once they have one.
+In a workspace, the template is the `upstream` remote and the user's own private repo is `origin`
+(once they have one). The start-of-session check sets this up.
 
 - **Getting updates:** `git pull upstream main`. It merges cleanly as long as personal and template
   files stay separate. If it conflicts, a template file was edited locally: stop and show the user.
