@@ -24,10 +24,10 @@ Claude Code does the work; the `CLAUDE.md` files tell it how.
 
 ## Setup
 
-Template URL: `<template-url>`
+Template URL: `https://github.com/tpsoydan/job_search_template.git`
 
 1. Get your own copy, either way:
-   - **Clone it:** `git clone <template-url> my_job_search`
+   - **Clone it:** `git clone https://github.com/tpsoydan/job_search_template.git my_job_search`
    - **Or** use GitHub's **Use this template** button to create a new **private** repo, then clone
      that.
 
