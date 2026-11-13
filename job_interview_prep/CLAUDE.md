@@ -49,11 +49,16 @@ Follow these steps in order when working on a job.
 
 ### 0. Create and register the job folder
 If the job has no folder yet: copy `jobs/new_job_skeleton/` to `jobs/<yymmdd>_<Company>_<Role>/`
-(`yymmdd` = the date the lead came in or the first interview, whichever the candidate prefers; ask
-once and note the choice in `input/profile.md`). Then add a stub entry to `jobs/PRIOR_PREP_PROJECTS.md`
+(`yymmdd` = the **application date** by default: a job has one application but can have many
+interviews. With no application (recruiter-sourced), use the date of first recruiter contact; with
+two applications (e.g. related reqs), use the earlier one. Ask once whether the candidate prefers
+another date, such as the first interview, and note the choice in `input/profile.md`). Then add a stub entry to `jobs/PRIOR_PREP_PROJECTS.md`
 (if the file doesn't exist yet, create it with the header shown below) with at least: a bolded `**Path:**` field (`jobs/<folder>`), role and company, how the lead came in
 (referral, recruiter, direct application...), and status `In progress`. If an entry already exists,
 skip this step.
+
+If a job folder is ever renamed (for example to follow a new date rule), update its `**Path:**` in
+`jobs/PRIOR_PREP_PROJECTS.md` and grep the workspace for the old name: other files may point to it.
 
 The catalog is personal, so the template doesn't ship it (a template copy would conflict with your
 entries on every template update). Header for a new catalog:

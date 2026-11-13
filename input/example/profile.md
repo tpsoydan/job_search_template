@@ -24,8 +24,9 @@ you. Delete sections that don't apply.*
 
 ## Job search
 - Search approach: (e.g. "favor coverage over precision: search wide and let ratings filter")
-- Job folder dates (`job_interview_prep/jobs/<yymmdd>_...`): (date the lead came in, or date of the
-  first interview)
+- Job folder dates (`job_interview_prep/jobs/<yymmdd>_...`): (application date; first recruiter
+  contact if there was no application; the earlier date if there were two applications. Or another
+  date you prefer, such as the first interview)
 
 ## Other folders in this workspace
 (Personal top-level folders the template doesn't know about, e.g. `unemployment/`: benefits filings
