@@ -12,7 +12,7 @@ folder is generic and comes from the template.
 
 ## Layout
 ```
-job_scraper/
+scraper/
 ├── CLAUDE.md                 ← this file
 ├── bin/
 │   ├── run_search.py         ← runs keyword groups end-to-end (the normal entry point)

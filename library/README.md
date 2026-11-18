@@ -2,7 +2,7 @@
 
 Your reusable study and reference material, shared by every job you prepare for and linked from the
 skill-gap report. It starts empty and grows as interview prep promotes reusable docs into it (see
-step 7 of `job_interview_prep/CLAUDE.md`).
+step 7 of `prep/CLAUDE.md`).
 
 Organize it by area, one folder per domain or target company, so a new job can use a whole folder:
 
@@ -19,7 +19,7 @@ What belongs here: anything that would help with any future job in that area. Wh
 for one job (its job description, interviewer names, company-specific pitch), which stays in that
 job's folder.
 
-To have the skill-gap report point at these docs, list them in `job_scraper/input/study_library.json`
-(example in `job_scraper/input/example/`).
+To have the skill-gap report point at these docs, list them in `scraper/input/study_library.json`
+(example in `scraper/input/example/`).
 
 This README comes from the template; everything else here is yours.

@@ -1,5 +1,5 @@
 # Scraper results: large and regenerable
-job_scraper/output/
+scraper/output/
 
 # Scratch areas: keep the folders, not their contents
 **/ignore/*

@@ -30,7 +30,7 @@ Read this after `CLAUDE.md` when resuming this project cold. It captures where t
 
 ## Library Candidates
 
-*Docs (or sections) in `output/` that look reusable beyond this job — note them as they're written, with the target `library/<area>/` and what job-specific framing would need stripping. The Promotion Review (`job_interview_prep/CLAUDE.md` step 7) starts from this list. Mark each as promoted/declined once reviewed.*
+*Docs (or sections) in `output/` that look reusable beyond this job — note them as they're written, with the target `library/<area>/` and what job-specific framing would need stripping. The Promotion Review (`prep/CLAUDE.md` step 7) starts from this list. Mark each as promoted/declined once reviewed.*
 
 - `[output doc]` → `library/[area]/` — [why it's reusable; what to strip]
 
@@ -44,7 +44,7 @@ Read this after `CLAUDE.md` when resuming this project cold. It captures where t
 
 ## Conventions Established This Project (keep following them)
 
-- [Any project-specific conventions that aren't already covered by `job_interview_prep/CLAUDE.md` — e.g., specific verification practices, formatting preferences, standing instructions about when to commit.]
+- [Any project-specific conventions that aren't already covered by `prep/CLAUDE.md` — e.g., specific verification practices, formatting preferences, standing instructions about when to commit.]
 
 ## Interview Round Log
 

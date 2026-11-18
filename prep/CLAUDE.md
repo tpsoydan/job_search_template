@@ -12,8 +12,9 @@ workspace's shared `library/`, so the next job starts from it.
 <workspace>/
 ├── input/profile.md            ← who the candidate is (read it first)
 ├── input/resume/               ← master resume versions (resume_<yymmdd>.pdf); never edited here
+├── input/career/               ← career source records (status reports, reviews, CV...); read-only
 ├── library/                    ← reusable study material, shared by every job (see below)
-└── job_interview_prep/
+└── prep/
     ├── CLAUDE.md               ← this file
     ├── README.md               ← how to start a new job (for humans)
     ├── ignore/                 ← scratch space; never read it, contents not tracked
@@ -37,7 +38,7 @@ folder per technical domain or target company (`os/linux/`, `cloud/`, `<company>
 new job can reference a whole relevant folder instead of picking files one by one. Create a new area
 folder when nothing fits.
 
-Paths in this file are relative to `job_interview_prep/`; from inside a job folder, the library is
+Paths in this file are relative to `prep/`; from inside a job folder, the library is
 `../../../library/` and the resume folder is `../../../input/resume/`. Reference library files where
 they are: don't copy or symlink them into a job's `input/`.
 
@@ -168,6 +169,9 @@ and what stayed local in the job's catalog entry.
 - **Before writing an accomplishments doc, start from
   `library/career_accomplishments/<employer>_career_history.md`** and re-angle facts toward the JD.
   Don't regenerate the underlying facts.
+- **`input/career/` is the primary source for career facts** (if the candidate has one). When a
+  fact is missing from `library/career_accomplishments/` or needs checking, look it up there, and
+  add what you find to the career-history doc once the candidate confirms it.
 - **Before writing a technical study doc, check `library/<area>/`.** A domain corpus built for one
   role usually covers much of the next same-domain role, even at another company or level.
 - `library/general/` holds behavioral-question answers and generic questions to ask: adapt them into

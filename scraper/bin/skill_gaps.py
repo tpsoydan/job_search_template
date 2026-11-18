@@ -36,7 +36,7 @@ the workspace's library/ cover each skill (or "none yet"), so the report also
 shows where study material is still missing. Format:
     {"libraryRoot": "../library",
      "topics": {"Firmware: UEFI/BIOS/BMC": ["firmware/uefi_bmc_redfish.md"]}}
-libraryRoot is relative to this job_scraper/ folder; topic names must match
+libraryRoot is relative to this scraper/ folder; topic names must match
 the TOPICS table below.
 
 Usage:

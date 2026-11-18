@@ -54,14 +54,14 @@ Template URL: `https://github.com/tpsoydan/job_search_template.git`
 
 ```
 CLAUDE.md               how the workspace fits together (for Claude)
-input/                  your profile and resume versions
+input/                  your profile, resume versions and career records
 library/                your reusable study docs
-job_scraper/            scraping, rating, skill gaps
-job_interview_prep/     one folder per job you prepare for
+scraper/                scraping, rating, skill gaps
+prep/                   one folder per job you prepare for
 ```
 
-Your own files live only in `input/`, `library/`, `job_scraper/input/`, `job_scraper/output/` and
-`job_interview_prep/jobs/`. Everything else comes from this template.
+Your own files live only in `input/`, `library/`, `scraper/input/`, `scraper/output/` and
+`prep/jobs/`. Everything else comes from this template.
 
 ## Updates and contributions
 

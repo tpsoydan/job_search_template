@@ -42,24 +42,26 @@ rules under "Template files vs. personal files" apply to every change.
 ```
 <workspace>/
 ├── CLAUDE.md, README.md      ← this file; README is for humans
+├── ROADMAP.md                ← planned template changes (generic; personal to-dos go elsewhere)
 ├── input/                    ← shared personal input
 │   ├── profile.md            ← who the user is (personal)
 │   ├── resume/               ← resume_<yymmdd>.pdf/.docx versions (personal)
+│   ├── career/               ← career source records: status reports, reviews, CV, publications (personal)
 │   └── example/profile.md    ← template example
 ├── library/                  ← reusable study docs (personal), see library/README.md
-├── job_scraper/              ← find and rate jobs; see job_scraper/CLAUDE.md
-└── job_interview_prep/       ← per-job interview prep; see job_interview_prep/CLAUDE.md
+├── scraper/                  ← find and rate jobs; see scraper/CLAUDE.md
+└── prep/                     ← per-job interview prep; see prep/CLAUDE.md
 ```
 Other top-level folders (e.g. a job-search activity log kept for unemployment benefits) may exist in
 a particular workspace. They're personal and described in `input/profile.md`.
 
 How the pieces connect:
 1. **Resume** (`input/resume/`) is the basis for everything.
-2. **Scrape** jobs weekly (`job_scraper/`), then **rate** them against the resume.
-3. **Skill gaps** (`job_scraper/output/skill_gaps.md`) show which skills would raise the most ratings,
+2. **Scrape** jobs weekly (`scraper/`), then **rate** them against the resume.
+3. **Skill gaps** (`scraper/output/skill_gaps.md`) show which skills would raise the most ratings,
    and which have study docs in `library/` yet.
 4. **Study:** write docs for the gaps into `library/`.
-5. **Prep:** a promising job or an interview invitation becomes a folder in `job_interview_prep/jobs/`,
+5. **Prep:** a promising job or an interview invitation becomes a folder in `prep/jobs/`,
    which draws on `library/` and promotes reusable docs back into it.
 
 Each sub-project's CLAUDE.md has its details. Read it before working in that folder.
@@ -72,12 +74,12 @@ The workspace mixes files from the template with the user's own. They never shar
 what lets template updates merge cleanly. **Personal content lives only in:**
 - `input/` (except `input/README.md` and `input/example/`)
 - `library/` (except `library/README.md`)
-- `job_scraper/input/` (except `job_scraper/input/example/`) and `job_scraper/output/`
-- `job_interview_prep/jobs/` (except `jobs/new_job_skeleton/`)
+- `scraper/input/` (except `scraper/input/example/`) and `scraper/output/`
+- `prep/jobs/` (except `jobs/new_job_skeleton/`)
 - any `ignore/` folder, and any top-level folder the template doesn't ship
 
 **Everything else comes from the template:** all CLAUDE.md and README.md files, `.gitignore`,
-`.claude/settings.json`, `job_scraper/bin/`, the `example/` folders and `new_job_skeleton/`.
+`.claude/settings.json`, `scraper/bin/`, the `example/` folders and `new_job_skeleton/`.
 
 Rules:
 - **Never put personal information in a template file:** no names, employers, companies being
@@ -101,13 +103,13 @@ groups, not all at once, and show each file before saving it.
    `input/example/profile.md`. Save as `input/profile.md`.
 2. **Resume:** ask the user to put their resume in `input/resume/` as `resume_<yymmdd>.pdf` (plus the
    `.docx` if they edit it in Word). Read it, and use it to suggest target roles and search keywords.
-3. **Job search config:** build `job_scraper/input/keywords_search.json` from
-   `job_scraper/input/example/keywords_search.json`: the search country, the local area and its town
+3. **Job search config:** build `scraper/input/keywords_search.json` from
+   `scraper/input/example/keywords_search.json`: the search country, the local area and its town
    names (or remote only), and keyword groups from their target roles and companies. Explain the
    group types (keyword-only, company-scoped, broad titles) and suggest a starting set.
 4. **Apify:** check that `APIFY_TOKEN` is set (without printing it). If it isn't, explain how to get
    a token from apify.com and set it in their shell startup file, then restart Claude Code.
-5. **Dry run:** `python3 bin/run_search.py --dry-run` from `job_scraper/`, so they can see what a
+5. **Dry run:** `python3 bin/run_search.py --dry-run` from `scraper/`, so they can see what a
    real run would do and cost before spending anything.
 6. **Commit** the personal files to the workspace repo, once the user approves.
 
@@ -130,6 +132,31 @@ In a workspace, the template is the `upstream` remote and the user's own private
      `git pull <workspace-path> <short-name>`.
   5. `git switch main && git pull upstream main`.
 - **Never push the workspace's `main` to `upstream`:** it contains personal files.
+
+---
+
+## Working on several areas at once
+
+A workspace has areas that can be worked on independently: the job search (`scraper/`), each
+job's prep (`prep/jobs/<job>/`), and any personal top-level folders. Areas differ
+between workspaces. `input/profile.md` lists this workspace's personal folders.
+
+- **One session per area.** Give each area in active use its own Claude Code session (its own
+  terminal window). Short asides about another area are fine in the current session. A single
+  session that switches between areas grows long and gets summarized, and the summary mixes topics.
+- **Start every session at the workspace root** and name the area in the first message. That way
+  every session reads this file and `input/profile.md` before the area's own CLAUDE.md.
+- **State files make switching cheap.** Each area keeps a restore-context file: a job's
+  `PROJECT_STATE.md`, or whatever a personal folder's CLAUDE.md names. Read it at the start of a
+  session and update it before ending one.
+- **Name sessions** (`/rename`) so `/resume` finds them again.
+- **Shared files:** some files are used by more than one area (`input/profile.md`,
+  `prep/jobs/PRIOR_PREP_PROJECTS.md`, and any shared log or spreadsheet). Edit each
+  from one session at a time, and re-read it just before editing, since another session may have
+  changed it.
+- **Commits:** git has one staging area for the whole repo. Stage only your own area's paths
+  (`git add <path>`, never `git add -A` or `git add .`), and check `git status --short` for another
+  area's files before committing.
 
 ---
 
